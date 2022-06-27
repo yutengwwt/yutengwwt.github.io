@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ver2.css">
+    <script src="ver2.js" defer></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="heading">NYCU 交通大學網球隊 比賽報帳填寫</h1>
+    <!-- Circles which indicates the steps of the form: -->
+    <div style="text-align:center;margin:40px auto;">
+        <h3 class="progress-bar">填寫進度</h3>
+        <span class="step active"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+    </div>
+    <form name="the-form" method="POST" action="result.php">
+        <div class="card center">
+            <h3 class="step-title">Step 1. 填寫人</h3>
+            <div class="form-group">
+                <label for="NameInCharge">姓名</label>
+                <input type="text" name="NameInCharge" id="NameInCharge">
+            </div>
+            <div class="form-group">
+                <label for="PhoneInCharge">手機</label>
+                <input type="tel" name="PhoneInCharge" id="PhoneInCharge">
+            </div>
+            <div class="buttons">
+                <button class="btn next" type="button" onclick="nextPrev(1)">下一頁</button>
+            </div>
+        </div>
+        <div class="card">
+            <h3 class="step-title">Step 2. 賽事資訊</h3>
+            <div class="form-group">
+                <label for="GameTitle">比賽名稱</label>
+                <input type="text" name="GameTitle" id="GameTitle">
+            </div>
+            <div class="form-group">
+                <label for="Location">地點</label>
+                <input type="text" name="Location" id="Location">
+            </div>
+            <div class="form-group">
+                <label for="StartDay">日期-起</label>
+                <input type="date" name="StartDay" id="StartDay">
+            </div>
+            <div class="form-group">
+                <label for="EndDay">日期-訖</label>
+                <input type="date" name="EndDay" id="EndDay">
+            </div>
+            <div class="buttons">
+                <button class="btn prev" type="button" onclick="nextPrev(-1)">上一頁</button>
+                <button class="btn next" type="button" onclick="nextPrev(1)">下一頁</button>
+            </div>
+        </div>
+        <div class="card">
+            <h3 class="step-title">Step 3. 個人賽項目</h3>
+            <div class="category">
+                <p id="MS">男單</p>
+                <button type="button" onclick="addMenSingle()">新增選手</button>
+                <ol id="MenSingle"></ol>
+            </div>
+            <div class="category">
+                <p id="MD">男雙</p>
+                <button type="button" onclick="addMenDouble()">新增選手</button>
+                <ol id="MenDouble"></ol>
+            </div>
+            <div class="category">
+                <p id="WS">女單</p>
+                <button type="button" onclick="addWomenSingle()">新增選手</button>
+                <ol id="WomenSingle"></ol>
+            </div>
+            <div class="category">
+                <p id="WD">女雙</p>
+                <button type="button" onclick="addWomenDouble()">新增選手</button>
+                <ol id="WomenDouble"></ol>
+            </div>
+            <div class="category">
+                <p id="MIX">混雙</p>
+                <button type="button" onclick="addMixedDouble()">新增選手</button>
+                <ol id="MixedDouble"></ol>
+            </div>
+            <div class="buttons">
+                <button class="btn prev" type="button" onclick="nextPrev(-1)">上一頁</button>
+                <button class="btn reset" type="button" onclick="resetIndividual()">清除這頁</button>
+                <button class="btn next" type="button" onclick="nextPrev(1)">下一頁</button>
+            </div>
+        </div>
+        <div class="card">
+            <h3 class="step-title" id="TEAM">Step 4. 團體賽項目</h3>
+            <button type="button" onclick="addTeam()" >新增隊伍</button>
+            <ol class="team" id="TeamList">
+
+            </ol>
+            <div class="buttons">
+                <button class="btn prev" type="button" onclick="nextPrev(-1)">上一頁</button>
+                <button class="btn reset" type="button" onclick="resetTeams()">清除這頁</button>
+                <button class="btn submit" type="submit" name="SubmitButton">Submit</button>
+            </div>
+        </div>
+    </form>
+
+  
+</body>
+</html>

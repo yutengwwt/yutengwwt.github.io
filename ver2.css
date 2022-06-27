@@ -1,0 +1,146 @@
+body {
+    background-color: red; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, rgb(43, 35, 164), indigo, violet);
+}
+.heading {
+    text-align: center;
+    color: white;   
+}
+.progress-bar {
+    color:darksalmon;
+}
+form {
+    overflow: hidden;
+    position: relative;
+}
+.card {
+    display: none;
+}
+
+.card.center {
+    position: relative;
+    display: block;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: .5rem;
+    background-color:khaki;
+    border: 1px solid #333;
+    border-radius: .5rem;
+}
+.card.center.right-shift {
+    animation: right-in 500ms 10ms ease-in-out both;
+}
+@keyframes right-in {
+    0% {
+        transform: translateX(-300%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.card.center.left-shift {
+    animation: left-in 500ms 10ms ease-in-out both;
+}
+@keyframes left-in {
+    0% {
+        transform: translateX(300%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.card input {
+    border: 1px solid #333;
+    border-radius: .25em;
+    font-size: 1rem;
+    padding: .25em;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+    font-weight:bold;
+}
+
+.btn {
+    width: 80px;
+    text-align: center;
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5rem;
+    gap: .25em;
+}
+
+.form-group:last-child {
+    margin: 0;
+}
+
+.form-group > label {
+    font-weight: bold;
+    font-size: #333;
+    color: #333;
+}
+
+input.invalid {
+    background-color: #ffdddd;
+  }
+.step-title {
+    margin: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.category {
+    display: flex;
+    flex-direction: column;
+    border: 1px dashed blue;
+    padding: .25em;
+    margin: .1em;
+    font-weight: bold;
+}
+
+.category > p {
+    text-align: center;
+}
+
+.team {
+    list-style-position: inside;
+}
+
+.team-item {
+    border: 1px dashed blue;
+    padding: .25em;
+    margin: .1em;
+    font-weight: bold;
+}
+
+
+/* Make circles that indicate the steps of the form: */
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
+  
+  /* Mark the active step: */
+  .step.active {
+    opacity: 1;
+  }
+  
+  /* Mark the steps that are finished and valid: */
+  .step.finish {
+    background-color:orange;
+  }
